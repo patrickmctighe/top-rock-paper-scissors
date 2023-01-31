@@ -1,58 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <script src="externaljs.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <script>
-let playerScore = 0
-let computerScore = 0
-let round = ""
-let computerChoice = function (){
-if (Math.floor(Math.random() * 3) === 1){
-    return ("rock")
-}
-else if (Math.floor(Math.random() * 3) === 2){
-    return ("paper")
-}
-else  {
-    return ("scissors")
-}}
-let computerSelection = computerChoice()
-let playerSelection = "rock"
-
-function playRound(playerSelection, computerSelection) { 
-    if (playerSelection == "rock" && computerSelection =="scissors" ||
-    playerSelection == "paper" && computerSelection =="rock"||
-     playerSelection =="scissors" && computerSelection == "paper"){
-      playerScore++; return `You win this round ${playerSelection} beats ${computerSelection}`
-     }else if (playerSelection == computerSelection) {
-        return "its a tie!"}
-        else {
-          computerScore++; return `You lost this round ${computerSelection} beats ${playerSelection}`
-        }}
-
-
-        function game(){
-
-for (let i = 0; i < 5; i++) {
-    console.log('Round ' + (i+1));
-    
-    let playerSelection = window.prompt("choose you wepon ROCK|PAPER|SCISSORS").toLowerCase();
-    let computerSelection = computerChoice();
-
-    console.log("Player's selection: " + playerSelection);
-    console.log("Computer's selection: " + computerSelection);
-    console.log('Result: ' + playRound(playerSelection, computerSelection));
-    console.log("Score: Player " + playerScore + " - " + computerScore + " Computer.");
-}
-}
-let gameOutcome= game()
-console.log(gameOutcome)
-   </script>
-  
+    <div id = buttons>
+        <button id="rock" class="button">Rock</button>
+        <button id= "paper" class="button">Paper</button>
+        <button id= "scissors" class="button">Scissors</button>
+    </div>     
 </body>
 </html>
